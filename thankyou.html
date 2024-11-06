@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #4B0082;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #6c757d;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Account Created Successfully!</h2>
+    <p>Welcome, <span id="fullNameDisplay"></span></p>
+    <p>Your email: <span id="emailDisplay"></span></p>
+
+    <button onclick="window.location.href='login.html';">Go to Login Page</button>
+</div>
+
+<script>
+    // Retrieve the account details from localStorage
+    const accountDetails = JSON.parse(localStorage.getItem("accountDetails"));
+
+    if (accountDetails) {
+        // Display the account information on the page
+        document.getElementById("fullNameDisplay").textContent = accountDetails.fullName;
+        document.getElementById("emailDisplay").textContent = accountDetails.email;
+    } else {
+        // If there's no account data, redirect back to create account page
+        window.location.href = "createAccount.html";
+    }
+</script>
+
+</body>
+</html>

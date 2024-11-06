@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeddingAI - Home</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styles */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            background: linear-gradient(135deg, #FF69B4, #8A2BE2, #4B0082, #FF6347, #FFD700, #ADFF2F, #00FFFF, #DC143C, #7FFF00, #FF4500); /* 10 Colors */
+            background-size: 600% 600%;
+            animation: gradientBG 5s ease infinite; /* 5 seconds for faster blending effect */
+            color: #fff;
+            overflow: hidden;
+            scroll-behavior: smooth; /* Smooth scroll */
+        }
+
+        /* Container Styles */
+        .container {
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 0 60px rgba(255, 182, 193, 0.3);
+            text-align: center;
+            max-width: 650px;
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards, slideUp 1s ease-out forwards;
+            width: 100%;
+            max-width: 650px; /* Prevent overflow on smaller screens */
+        }
+
+        /* Logo Styles */
+        .logo {
+            font-size: 3em;
+            font-weight: 800;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            color: #4B0082;
+            letter-spacing: 5px;
+            animation: typing 2s steps(12) 1s forwards;
+            display: inline-block;
+        }
+
+        /* Typing Animation */
+        @keyframes typing {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+
+        /* Heading Styles */
+        h2 {
+            margin-bottom: 30px;
+            font-size: 1.8em;
+            color: #4B0082;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+
+        /* Button Styles */
+        button {
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            box-shadow: 0 10px 20px rgba(138, 43, 226, 0.3);
+            margin-bottom: 10px;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
+            animation-delay: 1s;
+        }
+
+        .create-account-button {
+            background: linear-gradient(45deg, #FF6347, #FF4500); /* Red gradient for Create Account */
+        }
+
+        .login-button {
+            background: #4B0082; /* Purple gradient for Login */
+        }
+
+        button:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(255, 99, 71, 0.4);
+        }
+
+        /* Slide Up and Fade In Animations */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            0% { transform: translateY(50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Gradient Animation */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            10% { background-position: 10% 50%; }
+            20% { background-position: 20% 50%; }
+            30% { background-position: 30% 50%; }
+            40% { background-position: 40% 50%; }
+            50% { background-position: 50% 50%; }
+            60% { background-position: 60% 50%; }
+            70% { background-position: 70% 50%; }
+            80% { background-position: 80% 50%; }
+            90% { background-position: 90% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            max-width: 100%;
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-images img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            margin: 0 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Navigation Arrows */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            z-index: 2;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            /* Adjust container width for smaller screens */
+            .container {
+                padding: 20px;
+                max-width: 90%;
+            }
+
+            /* Carousel images should resize on smaller screens */
+            .carousel-images img {
+                width: 150px;
+                height: 150px;
+            }
+
+            /* Reduce font sizes on smaller screens */
+            .logo {
+                font-size: 2.5em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            button {
+                font-size: 1em;
+                padding: 12px 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Adjust the button size for very small screens */
+            button {
+                font-size: 0.9em;
+                padding: 10px 25px;
+            }
+
+            /* Adjust carousel image sizes for mobile */
+            .carousel-images img {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="logo">WeddingAI</div>
+        <h2>Welcome to WeddingAI</h2>
+
+        <!-- Image Carousel -->
+        <div class="carousel-container">
+            <div class="carousel-images">
+                <!-- 10 sample images, replace with actual image sources -->
+                <img src="images/1.png" alt="Wedding Image 1">
+                <img src="images/2.png" alt="Wedding Image 2">
+                <img src="images/3.png" alt="Wedding Image 3">
+                <img src="images/4.jpg" alt="Wedding Image 4">
+                <img src="images/5.jpg" alt="Wedding Image 5">
+                <img src="images/6.png" alt="Wedding Image 6">
+                <img src="images/7.png" alt="Wedding Image 7">
+                <img src="images/8.jpg" alt="Wedding Image 8">
+                <img src="images/9.png" alt="Wedding Image 9">
+                <img src="images/10.png" alt="Wedding Image 10">
+            </div>
+
+            <!-- Navigation Arrows -->
+            <span class="prev" onclick="moveSlide(-1)">&#10094;</span>
+            <span class="next" onclick="moveSlide(1)">&#10095;</span>
+        </div>
+
+        <!-- Buttons to Navigate -->
+        <button class="create-account-button" onclick="goToCreateAccount()">Create Account</button>
+        <button class="login-button" onclick="goToLogin()">Login</button>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+
+        // Function to change slides
+        function moveSlide(direction) {
+            const slides = document.querySelectorAll('.carousel-images img');
+            const totalSlides = slides.length;
+            slideIndex += direction;
+
+            if (slideIndex < 0) {
+                slideIndex = totalSlides - 1;
+            } else if (slideIndex >= totalSlides) {
+                slideIndex = 0;
+            }
+
+            const newTransformValue = -slideIndex * 220; // Adjusting the width of the images
+            document.querySelector('.carousel-images').style.transform = `translateX(${newTransformValue}px)`;
+        }
+
+        // Redirect to Create Account page
+        function goToCreateAccount() {
+            window.location.href = "create_account.html"; // Redirect to create account page
+        }
+
+        // Redirect to Login page
+        function goToLogin() {
+            window.location.href = "login.html"; // Redirect to login page
+        }
+    </script>
+
+</body>
+</html>
