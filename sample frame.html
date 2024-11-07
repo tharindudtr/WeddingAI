@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin: 0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #4B0082;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards;
+        }
+
+        /* Animation for the fade-in and slide-up effect */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .gallery img:nth-child(1) { animation-delay: 0s; }
+        .gallery img:nth-child(2) { animation-delay: 0.1s; }
+        .gallery img:nth-child(3) { animation-delay: 0.2s; }
+        .gallery img:nth-child(4) { animation-delay: 0.3s; }
+        .gallery img:nth-child(5) { animation-delay: 0.4s; }
+        .gallery img:nth-child(6) { animation-delay: 0.5s; }
+        .gallery img:nth-child(7) { animation-delay: 0.6s; }
+        .gallery img:nth-child(8) { animation-delay: 0.7s; }
+        .gallery img:nth-child(9) { animation-delay: 0.8s; }
+        .gallery img:nth-child(10) { animation-delay: 0.9s; }
+        .gallery img:nth-child(11) { animation-delay: 1s; }
+        .gallery img:nth-child(12) { animation-delay: 1.1s; }
+        .gallery img:nth-child(13) { animation-delay: 1.2s; }
+        .gallery img:nth-child(14) { animation-delay: 1.3s; }
+        .gallery img:nth-child(15) { animation-delay: 1.4s; }
+        .gallery img:nth-child(16) { animation-delay: 1.5s; }
+        .gallery img:nth-child(17) { animation-delay: 1.6s; }
+        .gallery img:nth-child(18) { animation-delay: 1.7s; }
+        .gallery img:nth-child(19) { animation-delay: 1.8s; }
+        .gallery img:nth-child(20) { animation-delay: 1.9s; }
+
+    </style>
+</head>
+<body>
+
+    <h1>Wedding AI Photo Gallery</h1>
+
+    <!-- Image Gallery Container -->
+    <div class="gallery">
+        <!-- Add your 20 images here -->
+        <img src="image/1.png?text=Image+1" alt="Wedding Image 1">
+        <img src="image/2.png?text=Image+2" alt="Wedding Image 2">
+        <img src="image/3.png?text=Image+3" alt="Wedding Image 3">
+        <img src="image/4.png?text=Image+4" alt="Wedding Image 4">
+        <img src="image/5.png?text=Image+5" alt="Wedding Image 5">
+        <img src="image/6.png?text=Image+6" alt="Wedding Image 6">
+        <img src="image/7.png?text=Image+7" alt="Wedding Image 7">
+        <img src="image/8.png?text=Image+8" alt="Wedding Image 8">
+        <img src="image/9.png?text=Image+9" alt="Wedding Image 9">
+        <img src="image/10.png?text=Image+10" alt="Wedding Image 10">
+        <img src="image/11.png?text=Image+11" alt="Wedding Image 11">
+        <img src="image/12.png?text=Image+12" alt="Wedding Image 12">
+        <img src="image/13.png?text=Image+13" alt="Wedding Image 13">
+        <img src="image/14.png?text=Image+14" alt="Wedding Image 14">
+        <img src="image/15.png?text=Image+15" alt="Wedding Image 15">
+        <img src="image/16.png?text=Image+16" alt="Wedding Image 16">
+        <img src="image/17.png?text=Image+17" alt="Wedding Image 17">
+        <img src="image/18.png?text=Image+18" alt="Wedding Image 18">
+        <img src="image/19.jpeg?text=Image+19" alt="Wedding Image 19">
+        <img src="image/20.jpg?text=Image+20" alt="Wedding Image 20">
+    </div>
+
+</body>
+</html>
