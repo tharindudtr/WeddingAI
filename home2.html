@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeddingAI - Colorful Background Animation</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            animation: colorChange 20s ease-in-out infinite;
+        }
+
+        /* Header Styling */
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: white;
+        }
+
+        p {
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+
+        /* Button Styling */
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            margin: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s;
+            text-decoration: none; /* Make sure the link doesn't have underline */
+        }
+
+        .button:hover {
+            background-color: #45a049;
+            transform: scale(1.1);
+        }
+
+        /* Button Container */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        /* Animation for the background color gradient */
+        @keyframes colorChange {
+            0% {
+                background: linear-gradient(to right, #ff7e5f, #feb47b);
+            }
+            5% {
+                background: linear-gradient(to right, #ff6a00, #f8b400);
+            }
+            10% {
+                background: linear-gradient(to right, #00c6ff, #28a745);
+            }
+            15% {
+                background: linear-gradient(to right, #00bcd4, #4caf50);
+            }
+            20% {
+                background: linear-gradient(to right, #8e44ad, #e74c3c);
+            }
+            25% {
+                background: linear-gradient(to right, #3498db, #f39c12);
+            }
+            30% {
+                background: linear-gradient(to right, #9b59b6, #34495e);
+            }
+            35% {
+                background: linear-gradient(to right, #e67e22, #f1c40f);
+            }
+            40% {
+                background: linear-gradient(to right, #1abc9c, #f1c40f);
+            }
+            45% {
+                background: linear-gradient(to right, #16a085, #8e44ad);
+            }
+            50% {
+                background: linear-gradient(to right, #e74c3c, #ff6347);
+            }
+            55% {
+                background: linear-gradient(to right, #2ecc71, #9b59b6);
+            }
+            60% {
+                background: linear-gradient(to right, #f39c12, #f8b400);
+            }
+            65% {
+                background: linear-gradient(to right, #8e44ad, #2c3e50);
+            }
+            70% {
+                background: linear-gradient(to right, #2980b9, #9b59b6);
+            }
+            75% {
+                background: linear-gradient(to right, #f1c40f, #ff9f00);
+            }
+            80% {
+                background: linear-gradient(to right, #1abc9c, #ff6347);
+            }
+            85% {
+                background: linear-gradient(to right, #16a085, #00bcd4);
+            }
+            90% {
+                background: linear-gradient(to right, #f39c12, #ff7e5f);
+            }
+            95% {
+                background: linear-gradient(to right, #3498db, #ff6a00);
+            }
+            100% {
+                background: linear-gradient(to right, #ff7e5f, #feb47b);
+            }
+        }
+
+        /* Content Section */
+        #content {
+            transition: opacity 1s ease-in-out;
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to WeddingAI!</h1>
+    <p>Click the buttons below to interact with our AI-powered assistant.</p>
+    
+    <!-- Content Section -->
+    <div id="content">
+        <p id="intro-text">Let's start playing your dream Editing.</p>
+    </div>
+
+    <!-- Button Container -->
+    <div class="button-container">
+        <a href="https://huggingface.co/spaces/subbytech/comfyui-launcher" class="button" target="_blank">ComfyUI</a>
+        <a href="https://huggingface.co/spaces/leonelhs/FaceFusion" class="button" target="_blank">FF 4.4</a>
+        <a href="https://huggingface.co/spaces/tuan2308/face-swap" class="button" target="_blank">Face Swaping</a>
+        <a href="https://huggingface.co/spaces/yanze/PuLID-FLUX" class="button" target="_blank">PuLID-FLUX</a>
+        <a href="https://huggingface.co/spaces/r3gm/RVC_HFv2" class="button" target="_blank">RVC_HFv2</a>
+    </div>
+
+    <script>
+        function changeBackground(buttonNumber) {
+            const introText = document.getElementById("intro-text");
+
+            // Change the text content based on the button clicked
+            switch (buttonNumber) {
+                case 1:
+                    introText.innerHTML = "Discover the latest wedding themes and inspiration!";
+                    break;
+                case 2:
+                    introText.innerHTML = "Track your wedding expenses and stay within budget!";
+                    break;
+                case 3:
+                    introText.innerHTML = "Find the best vendors for your special day!";
+                    break;
+                case 4:
+                    introText.innerHTML = "Create and manage your guest list with ease!";
+                    break;
+                case 5:
+                    introText.innerHTML = "Set up your online RSVP system and manage responses.";
+                    break;
+                default:
+                    introText.innerHTML = "Let's start planning your dream wedding.";
+                    break;
+            }
+        }
+    </script>
+
+</body>
+</html>
